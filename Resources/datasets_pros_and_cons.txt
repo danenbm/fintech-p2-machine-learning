@@ -1,0 +1,28 @@
+Wellbeing and health
+Pros: interesting data
+Cons: have to do correlation matrix and pick which is the class output
+
+
+
+hotel_reviews_sentiment_Analysis
+Pros: Interesting, natural language processing
+Cons: Different than our current project scope
+
+
+
+Bankruptcy prediction
+Pros: Clear classification (bankrupt/not bankrupt)
+Cons: Some columns may have missing data (0 tax rate might not be real)
+
+
+
+Credit card fraud:
+Pros: Very clean already PCA dimension reduced numerical, and clear classification
+Cons: Boring, kind of like what we already did a lot in class, and doesn't let our project do much of the cleaning so will make our notebook/presentation shorter.
+
+
+
+Stock financial indicators from companies.
+Pros: clear classificatoin (stock went up/stock went down)
+Cons: More boring then some of the others, similar to class.
+Notes: Would be picking one year
