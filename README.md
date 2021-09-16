@@ -55,7 +55,7 @@ Our dataset also contains a `Class` column which is used for classification.  Fo
 ### Precision vs. Recall
 Because we are predicting stock prices, precision will be more important than recall because the cost of acting is high, but the cost of not acting is low.
 
-Furthermore, we expect to act only on Category 1, which represents stocks that go up.  So we optimized our classification modeling for Precision of category 1, meaning it is most important that when we predict that a stock is one that should go up, we are correct.
+Furthermore, we expect to act only on Class 1, which represents stocks that go up.  So we optimized our classification modeling for Precision of Class 1, meaning it is most important that when we predict that a stock is one that should go up, we are correct.
 
 ### Data cleaning strategies
 * We tried various strategies for how much missing/invalid data we discarded.
@@ -106,7 +106,7 @@ weighted avg       0.72      0.74      0.72       954
 weighted avg       0.67      0.71      0.65       954 
 ```
 ### Classification SVM SVC model using raw dataset with oversampling of minority class
-For this model we used the imblearn `RandomOverSampler`.
+For oversampling we used the imblearn `RandomOverSampler`.
 
 #### Results
 ```
