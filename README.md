@@ -261,7 +261,7 @@ This was our most complex model and took longer to run than most of the others. 
 
 Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model ran more quickly then the Tensorflow model and gave a Precision for Class 1 of 0.85.
 
-Autogluon provided the most automated solution, as we could essentially put the raw data into it and it handled the cleaning, encoding, creating and fitting of multiple models.
+Autogluon provided the most automated solution, as we could essentially put the raw data into it and it handled the cleaning, encoding, creating and fitting of multiple models.  The Autogluon model gave a Precision for Class 1 of 0.77.
 
 We were not able to get any highly accurate regression models, and next steps for our project are to look into regression modeling more as it might provide interesting insights into the performance of individual stocks that went up or down, since binary classification marks stocks as either "stocks to buy" or "stocks not to buy" without any nuance.
 
