@@ -59,7 +59,7 @@ Furthermore, we expect to act only on Class 1, which represents stocks that go u
 
 ### Data cleaning strategies
 * We tried various strategies for how much missing/invalid data we discarded.
-* We tried replacing zeros with the mean for each column.  It had a small effect but we left it out since it seemed to lower overall accuracy without much positive effect.
+* We tried replacing zeros with the mean for each column, and it had subtle/questionable effects.  Later, when we tried it again after some of our other changes, it had almost no effect on most of our models, except for a noticeably bad effect on our Tensorflow models that used the raw dataset.
 * We tried using the experimental scikit-learn `IterativeImputer` to impute NaN values.  We tried it with various estimators:
   * BayesianRidge: regularized linear regression
   * DecisionTreeRegressor: non-linear regression
