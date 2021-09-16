@@ -6,7 +6,7 @@ This Jupyter Notebook provides an analysis to see if financial indicators that a
 
 ## Data Sources
 
-* 200+ Financial Indicators of US stocks - 2018 - [200+ Financial Indicators of US stocks](https://www.kaggle.com/cnic92/200-financial-indicators-of-us-stocks-20142018)
+[200+ Financial Indicators of US stocks](https://www.kaggle.com/cnic92/200-financial-indicators-of-us-stocks-20142018)
 
 ---
 
@@ -61,11 +61,10 @@ Furthermore, we expect to act only on Category 1, which represents stocks that g
 * We tried various strategies for how much missing/invalid data we discarded.
 * We tried replacing zeros with the mean for each column.  It had a small effect but we left it out since it seemed to lower overall accuracy without much positive effect.
 * We tried using the experimental scikit-learn `IterativeImputer` to impute NaN values.  We tried it with various estimators:
- * BayesianRidge: regularized linear regression
- * DecisionTreeRegressor: non-linear regression
- * ExtraTreesRegressor: similar to missForest in R
- * KNeighborsRegressor: comparable to other KNN imputation approaches
- The first three models had trouble converging, and the K-neareset neigbors estimator produced results similar to just using the column mean.  So we stuck with the `SimpleImputer` using the column mean.
+  * BayesianRidge: regularized linear regression
+  * DecisionTreeRegressor: non-linear regression
+  * KNeighborsRegressor: comparable to other KNN imputation approaches
+  * The first two models had trouble converging, and the K-neareset neigbors estimator produced results similar to just using the column mean.  So we stuck with the `SimpleImputer` using the column mean.
 * We tried dropping some of the redundant columns but in general when we saw our Class 1 accuracy go down for multiple models, so we left in all the columns from the raw dataset.
 * We also tried scaling data to be between 0 and 1 using the scikit-learn `MinMaxScaler`.  This caused some of our models to only predict Class 1, but it had a positive effect on the Tensorflow models, especially with the raw dataset, so we used the 0 to 1 scaled data for those models.
 
@@ -260,7 +259,7 @@ Although several of our models peformed fairly well above 50% Precision for Clas
 
 This was our most complex model and took longer to run than most of the others.  This model gave a Precision for Class 1 of 0.89, meaning if we use this model to predict that a stock is expected to go up in a year, there is an 89% chance that our classification was correct.
 
-Our second best model was an SVM SVC classificaiton model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model ran more quickly then the Tensorflow model and gave a Precision for Class 1 of 0.85.
+Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model ran more quickly then the Tensorflow model and gave a Precision for Class 1 of 0.85.
 
 Autogluon provided the most automated solution, as we could essentially put the raw data into it and it handled the cleaning, encoding, creating and fitting of multiple models.
 
