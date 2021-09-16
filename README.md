@@ -179,11 +179,11 @@ weighted avg       0.70      0.71      0.59       954
 
 ### Regression AdaBoost model using raw dataset
 #### Results (1.0 is best)
-Mean accuracy: -0.57193532905021
+Coefficient of determination of the prediction: -0.57193532905021
 
 ### Regression AdaBoost model using key dataset
 #### Results (1.0 is best)
-Mean accuracy: -1.6260137253640794
+Coefficient of determination of the prediction: -1.6260137253640794
 
 ### Classification Logistic Regression model using raw dataset
 #### Results
