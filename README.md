@@ -202,15 +202,15 @@ weighted avg       0.69      0.72      0.68       954
 ### Classification Shallow Neural Network using key dataset with oversampling of minority class
 #### Results
 ```
+
               precision    recall  f1-score   support
 
-           0       0.48      0.55      0.51       280
-           1       0.80      0.76      0.78       674
+           0       0.41      0.66      0.51       280
+           1       0.81      0.61      0.69       674
 
-    accuracy                           0.69       954
-   macro avg       0.64      0.65      0.65       954
-weighted avg       0.71      0.69      0.70       954
-
+    accuracy                           0.62       954
+   macro avg       0.61      0.63      0.60       954
+weighted avg       0.69      0.62      0.64       954
 ```
 
 ### Classification Deep Neural Network using key dataset with oversampling of minority class
@@ -219,12 +219,12 @@ weighted avg       0.71      0.69      0.70       954
 
               precision    recall  f1-score   support
 
-           0       0.45      0.61      0.51       280
-           1       0.81      0.69      0.74       674
+           0       0.43      0.69      0.53       280
+           1       0.83      0.62      0.71       674
 
-    accuracy                           0.66       954
-   macro avg       0.63      0.65      0.63       954
-weighted avg       0.70      0.66      0.68       954
+    accuracy                           0.64       954
+   macro avg       0.63      0.65      0.62       954
+weighted avg       0.71      0.64      0.66       954
 ```
 
 ### Classification Shallow Neural Network using raw dataset scaled between 0 and 1, with oversampling of minority class
@@ -233,12 +233,12 @@ weighted avg       0.70      0.66      0.68       954
 
               precision    recall  f1-score   support
 
-           0       0.47      0.75      0.57       280
-           1       0.86      0.65      0.74       674
+           0       0.42      0.81      0.55       280
+           1       0.87      0.53      0.66       674
 
-    accuracy                           0.68       954
-   macro avg       0.66      0.70      0.66       954
-weighted avg       0.74      0.68      0.69       954
+    accuracy                           0.61       954
+   macro avg       0.64      0.67      0.60       954
+weighted avg       0.74      0.61      0.63       954
 ```
 
 ### Classification Deep Neural Network using raw dataset scaled between 0 and 1, with oversampling of minority class
@@ -247,19 +247,19 @@ weighted avg       0.74      0.68      0.69       954
 
               precision    recall  f1-score   support
 
-           0       0.39      0.86      0.54       280
-           1       0.89      0.44      0.59       674
+           0       0.43      0.76      0.55       280
+           1       0.85      0.58      0.69       674
 
-    accuracy                           0.57       954
-   macro avg       0.64      0.65      0.56       954
-weighted avg       0.74      0.57      0.58       954
+    accuracy                           0.63       954
+   macro avg       0.64      0.67      0.62       954
+weighted avg       0.73      0.63      0.65       954
 ```
 ## Conclusion
-Although several of our models peformed fairly well above 50% Precision for Class 1, the model that did the best was our Deep Neural Network classification model that used the raw dataset scaled between 0 and 1, and used oversampling of the minority class.
+Although several of our models peformed fairly well above 50% Precision for Class 1, the model that did the best was our Shallow Neural Network classification model that used the raw dataset scaled between 0 and 1, and used oversampling of the minority class.
 
-This model gave a Precision for Class 1 of 0.89, meaning if we use this model to predict that a stock is expected to go up in a year, there is an 89% chance that our classification was correct.  However, when we re-run this model, sometimes we get other precisions in the range of 0.83 to 0.89.  Next steps for our project would include making sure this model is seeded consistently and ran for enough epochs to be stabilized without overfitting.
+This model gave a Precision for Class 1 of 0.87, meaning if we use this model to predict that a stock is expected to go up in a year, there is an 87% chance that our classification was correct.  However, when we re-run this model, sometimes our Class 1 Precision varies slightly.  We set the numpy and Tensorflow seeds to minimize this, which resulted in variation of only 1-2%.
 
-Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model gave a Precision for Class 1 of 0.85, and when re-running the model fitting, gave more consistent results than the Tensorflow models.
+Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model gave a Precision for Class 1 of 0.85.  When re-running the SVM SVC model fitting, it gave more consistent results than the Tensorflow models.
 
 Autogluon provided the most automated solution, as we could essentially put the raw data into it and it handled the cleaning, encoding, creating and fitting of multiple models.  The Autogluon model gave a Precision for Class 1 of 0.77.
 
