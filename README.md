@@ -257,9 +257,9 @@ weighted avg       0.74      0.57      0.58       954
 ## Conclusion
 Although several of our models peformed fairly well above 50% Precision for Class 1, the model that did the best was our Deep Neural Network classification model that used the raw dataset scaled between 0 and 1, and used oversampling of the minority class.
 
-This was our most complex model and took longer to run than most of the others.  This model gave a Precision for Class 1 of 0.89, meaning if we use this model to predict that a stock is expected to go up in a year, there is an 89% chance that our classification was correct.
+This model gave a Precision for Class 1 of 0.89, meaning if we use this model to predict that a stock is expected to go up in a year, there is an 89% chance that our classification was correct.  However, when we re-run this model, sometimes we get other precisions in the range of 0.83 to 0.89.  Next steps for our project would include making sure this model is seeded consistently and ran for enough epochs to be stabilized without overfitting.
 
-Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model ran more quickly then the Tensorflow model and gave a Precision for Class 1 of 0.85.
+Our second best model was an SVM SVC classification model that used the raw dataset scaled by removing the mean and scaling to unit variance, again with oversampling of minority class.  This model gave a Precision for Class 1 of 0.85, and when re-running the model fitting, gave more consistent results than the Tensorflow models.
 
 Autogluon provided the most automated solution, as we could essentially put the raw data into it and it handled the cleaning, encoding, creating and fitting of multiple models.  The Autogluon model gave a Precision for Class 1 of 0.77.
 
